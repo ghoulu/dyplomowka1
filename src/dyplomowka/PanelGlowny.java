@@ -44,7 +44,7 @@ public class PanelGlowny extends JFrame {
     }
 
     JPanel panel = new ObrazPanel();
-    JButton przyciskTemp1 = new JButton();
+    JButton przyciskTemp1 = new JButton("Temp1: ");
     JButton przyciskTemp2 = new JButton();
 
     public void budujButton(String nazwa) {
