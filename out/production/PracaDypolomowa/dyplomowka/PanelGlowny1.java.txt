@@ -1,0 +1,41 @@
+package dyplomowka;
+
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+public class PanelGlowny1 extends JFrame {
+
+    private BufferedImage image1;
+
+    public PanelGlowny1() {
+        super("Panel główny");
+        this.setBounds(100, 20, 1680, 1050);
+
+        File imageFile1 = new File("PanelGlowny1.jpg");
+        try {
+            image1 = ImageIO.read(imageFile1);
+        } catch (IOException e) {
+            System.err.println("Blad odczytu obrazka");
+            e.printStackTrace();
+        }
+
+        Dimension dimension = new Dimension(image1.getWidth(), image1.getHeight());
+        setPreferredSize(dimension);
+
+        add(panel1);
+        panel1.add(paintComponent(image1);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }
+
+    public void paintComponent(Graphics g) {
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.drawImage(image1, 0, 0, this);
+    }
+
+    JPanel panel1 = new JPanel();
+
+}
