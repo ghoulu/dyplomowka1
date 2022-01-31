@@ -10,6 +10,7 @@ public class Main {
 //        new MojeMenu().setVisible(true);
 //        new MojeZdarzeniaOkna().setVisible(true);
 //        new MojePasekNarzedzi().setVisible(true);
+        new MojePrzelaczniki().setVisible(true);
 
         //WŁAŚCIWE KLASY PROGRAMU
         new PanelGlowny().setVisible(true);
