@@ -54,6 +54,7 @@ public class PanelGlowny extends JFrame {
         kontener.add(new ButtonTemp("testowyX", 1500,950,100,50));
         kontener.add(panel);
 
+        System.out.println("temperatury: "+ "");
 
 //        this.pack();
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -68,6 +69,7 @@ public class PanelGlowny extends JFrame {
     JButton przyciskTemp6 = new JButton("Temp6: ");
     JButton przyciskTemp7 = new JButton("Temp7: ");
     JButton przyciskTemp8 = new JButton("Temp8: ");
+    ParametryTemp parTemp1 = new ParametryTemp(18,12);
 
 
     public void budujButton(String nazwa) {
