@@ -3,16 +3,33 @@ package dyplomowka;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.math.BigInteger;
 
 public class PanelTemp extends JFrame {
     int x=100,y=200;
-    Integer tempAkt = 18, tempZad=20;
+    int tempAkt = 18;
+    int tempZad=20;
 
-    public PanelTemp(){
+    int tempNew = 0;
+
+    private final Controller controller = Controller.getInstance();
+
+
+    public PanelTemp(int tempAkt){
         this.setBounds(this.x,this.y,300,150);
 
         initComponents();
         this.setDefaultCloseOperation(HIDE_ON_CLOSE);
+
+        this.tempAkt = tempAkt;
+    }
+
+    public  PanelTemp() {
+        this.setBounds(this.x,this.y,300,150);
+
+        initComponents();
+        this.setDefaultCloseOperation(HIDE_ON_CLOSE);
+
     }
 
     public void setTempZad(Integer tempZad) {
@@ -38,22 +55,32 @@ public class PanelTemp extends JFrame {
     private JTextField poleZmainaTempZad = new JTextField(2);
     private JButton buttonZatwierdz = new JButton("OK");
 
-    private class ZmianaHandler implements ActionListener {
+
+
+     class ZmianaHandler implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            var source = e.getSource();
             poleZmainaTempZad.requestFocus();
-            String tekstZastepowany = poleZmainaTempZad.getText();
-
-/*                int opcja = JOptionPane.showConfirmDialog(null, "Czy chcesz zamienic '" + tempZad + "' na '" + poleZmainaTempZad.getText() + "'", "czy zmienic parametr", JOptionPane.YES_NO_OPTION);
-                if (opcja == 0) {
-                    tempZad = Integer.parseInt(poleZmainaTempZad.getText());
-                    buttonZatwierdz.doClick();
-                } else {
-                    buttonZatwierdz.doClick();
-                }*/
+     //       String tekstZastepowany = poleZmainaTempZad.getText();
             setTempZad(Integer.parseInt(poleZmainaTempZad.getText()));
             System.out.println("tempZad = " + tempZad);
 
+            tempNew = Integer.parseInt(poleZmainaTempZad.getText());
+            controller.getTemperatures().add(tempNew);
+
         }
+    }
+
+    void zmienWartoscParam(ParametryTemp zm, int a) {
+        setTempZad(a);
+    }
+
+    public int getTempNew() {
+        return tempNew;
+    }
+
+    public void setTempAkt(int tempAkt) {
+        this.tempAkt = tempAkt;
     }
 }

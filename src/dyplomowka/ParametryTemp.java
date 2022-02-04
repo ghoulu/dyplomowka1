@@ -7,12 +7,16 @@ public class ParametryTemp {
     public ParametryTemp(int tempWysw, int tempZadana) {
         this.tempWysw = tempWysw;
         this.tempZadana = tempZadana;
+
     }
 
-    public ParametryTemp(int tempZadana) {
-        this.tempZadana = tempZadana;
+    public ParametryTemp(int tempWysw) {
+        this.tempWysw = tempWysw;
     }
 
+    public ParametryTemp() {
+
+    }
 
     public int getTempWysw() {
         return tempWysw;

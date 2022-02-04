@@ -15,6 +15,10 @@ public class PanelGlowny extends JFrame {
         super("Panel główny");
         this.setBounds(100, 20, 1680, 1050);
 
+        ParametryTemp parTemp1 = new ParametryTemp(18,12);
+        parTemp1.setTempZadana(14);
+        System.out.println(parTemp1.getTempZadana());
+    
 
         Container kontener = this.getContentPane();
 //                kontener.add(panel);
@@ -27,8 +31,6 @@ public class PanelGlowny extends JFrame {
         setLayout(new FlowLayout());
         kontener.setLayout(null);
 
-//        panel.add(przyciskTemp1);
-//        przyciskTemp1.setSize(100,40);
         przyciskTemp1.setBounds(450, 405, 100, 50);
         przyciskTemp2.setBounds(450, 335, 100, 50);
         przyciskTemp3.setBounds(775, 360, 100, 50);
@@ -38,7 +40,6 @@ public class PanelGlowny extends JFrame {
         przyciskTemp7.setBounds(700, 560, 100, 50);
         przyciskTemp8.setBounds(1280, 820, 100, 50);
         panel.setBounds(0, 0, 1680, 1050);
-//        przyciskTemp1.setLocation(new Point(500,500));
 
         przyciskTemp1.addActionListener(new SluchaczPrzyciskowTemp());
 
@@ -50,7 +51,6 @@ public class PanelGlowny extends JFrame {
         kontener.add(przyciskTemp6);
         kontener.add(przyciskTemp7);
         kontener.add(przyciskTemp8);
-//        kontener.add(przyciskTemp8.setBounds(200,200,100,40));
         kontener.add(new ButtonTemp("testowyX", 1500,950,100,50));
         kontener.add(panel);
 
@@ -69,7 +69,7 @@ public class PanelGlowny extends JFrame {
     JButton przyciskTemp6 = new JButton("Temp6: ");
     JButton przyciskTemp7 = new JButton("Temp7: ");
     JButton przyciskTemp8 = new JButton("Temp8: ");
-    ParametryTemp parTemp1 = new ParametryTemp(18,12);
+
 
 
     public void budujButton(String nazwa) {
@@ -85,7 +85,6 @@ public class PanelGlowny extends JFrame {
 
         public void actionPerformed(ActionEvent e) {
             System.out.println("slucham przeciez");
-
 
         }
 
