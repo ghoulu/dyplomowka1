@@ -6,17 +6,26 @@ import java.awt.event.ActionListener;
 import java.math.BigInteger;
 
 public class PanelTemp extends JFrame {
-    int x=100,y=200;
-    int tempAkt = 18;
-    int tempZad=20;
+    int x,y;
+    int tempAkt = 0;
+    int tempZad=0;
 
     int tempNew = 0;
 
     private final Controller controller = Controller.getInstance();
 
+    public PanelTemp(int x, int y, int tempAkt){
+        this.x = x;
+        this.y = y;
+        this.setBounds(x,y,200,150);
 
+        initComponents();
+        this.setDefaultCloseOperation(HIDE_ON_CLOSE);
+
+        this.tempAkt = tempAkt;
+    }
     public PanelTemp(int tempAkt){
-        this.setBounds(this.x,this.y,300,150);
+        this.setBounds(this.x,this.y,200,150);
 
         initComponents();
         this.setDefaultCloseOperation(HIDE_ON_CLOSE);
@@ -25,7 +34,7 @@ public class PanelTemp extends JFrame {
     }
 
     public  PanelTemp() {
-        this.setBounds(this.x,this.y,300,150);
+        this.setBounds(this.x,this.y,200,150);
 
         initComponents();
         this.setDefaultCloseOperation(HIDE_ON_CLOSE);
@@ -67,7 +76,9 @@ public class PanelTemp extends JFrame {
             System.out.println("tempZad = " + tempZad);
 
             tempNew = Integer.parseInt(poleZmainaTempZad.getText());
+
             controller.getTemperatures().add(tempNew);
+            etykietaTempZad.setText("Zadana temperatura:   "+poleZmainaTempZad.getText()+" stC");
 
         }
     }

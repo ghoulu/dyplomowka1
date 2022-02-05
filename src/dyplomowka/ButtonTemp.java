@@ -12,19 +12,19 @@ public class ButtonTemp extends JButton {
     int tempZadana;
 
     public ButtonTemp(String butonName, int x, int y, int szer, int wys) {
-        super(butonName);
+        super(butonName+" " + "/");
         this.butonName = butonName;
         this.x = x;
         this.y = y;
         this.szer = szer;
         this.wys = wys;
-//        new JButton(butonName);
+        new JButton(butonName);
         this.setBounds(x,y,szer,wys);
-        this.addActionListener(new SluchaczPrzyciskowTemp());
+        this.addActionListener(new SluchaczPrzyciskowTemp(x,y));
 
     }
     public ButtonTemp(String butonName, int x, int y, int szer, int wys, int tempWysw, int tempZadana) {
-        super(butonName);
+        super(butonName+" " + tempWysw+ "/" + tempZadana);
         this.butonName = butonName;
         this.x = x;
         this.y = y;
@@ -32,10 +32,12 @@ public class ButtonTemp extends JButton {
         this.wys = wys;
         this.tempWysw = tempWysw;
         this.tempZadana = tempZadana;
+        new JButton(butonName);
         this.setBounds(x,y,szer,wys);
-        this.addActionListener(new SluchaczPrzyciskowTemp());
+        System.out.println("lokalizacja przycisku: "+x+"|"+y);
+        this.addActionListener(new SluchaczPrzyciskowTemp(x,y));
 
     }
 
-    JButton nowy = new JButton();
+//    JButton nowy = new JButton();
 }
