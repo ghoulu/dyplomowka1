@@ -20,7 +20,7 @@ class SluchaczPrzyciskowTemp implements ActionListener {
         controller.getTemperatures().add(newTemp);
         System.out.println("nacisnieto przycisk ");
 
-        new PanelTemp(x,y,controller.getTemperatures().get(0)).setVisible(true);
+        new PanelTemp(x,y,controller.getTemperatures().get(1)).setVisible(true);
         controller.getTemperatures().remove(0);
     }
 

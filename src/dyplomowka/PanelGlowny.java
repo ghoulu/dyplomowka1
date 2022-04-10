@@ -40,7 +40,9 @@ public class PanelGlowny extends JFrame {
         przyciskTemp1.addActionListener(new SluchaczPrzyciskowTemp(700,355));
 
 //        kontener.add(new ButtonTemp("T1", 300, 405, 100, 30, 20,21));
-        kontener.add(new ButtonTemp("T2", 500, 355, 100, 30, 19, 20));
+        ButtonTemp buttonTempT2 = new ButtonTemp("T2", 500, 355, 100, 30, 16, 17);
+        kontener.add(buttonTempT2);
+        //kontener.add(new ButtonTemp("T2", 500, 355, 100, 30, 19, 20));
         kontener.add(new ButtonTemp("T3", 775, 360, 100, 30,18,19));
         kontener.add(new ButtonTemp("T4", 1000, 490, 100, 30,19,20));
         kontener.add(new ButtonTemp("T5", 1170, 550, 100, 30,19,20));
@@ -89,7 +91,6 @@ public class PanelGlowny extends JFrame {
 //    JButton przyciskTemp6 = new JButton("Temp6: ");
 //    JButton przyciskTemp7 = new JButton("Temp7: ");
 //    JButton przyciskTemp8 = new JButton("Temp8: ");
-
 
     public void budujButton(String nazwa) {
         JButton przycisk = new JButton(nazwa);
